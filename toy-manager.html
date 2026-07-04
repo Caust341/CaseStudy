@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager | Toybox</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="Logo">
+            <a href="index.html">
+                <img src="images/Toybox.jpg" alt="ToyBox" class="logo-image">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="cart.html">CART</a></li>
+                <li><a href="toy-manager.html">CONTROL</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Enter a product">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="management-interface">
+            <nav class="management-topbar">
+                <div class="left-control">
+                    <button class="add-item-btn">Add Item +</button>
+                </div>
+
+                <form class="middle-control">
+                    <input type="text" placeholder="Search Items" id="search-bar">
+                    <button id="search-item-btn">Search</button>
+                </form>
+
+                <div class="right-control">
+                    <select id="sort-variants" class="sort-options" name="sort-list">
+                        <option value="by-id">Sort by Id</option>
+                        <option value="by-price">Sort by Price</option>
+                        <option value="by-name">Sort by Name</option>
+                    </select>
+                </div>
+            </nav>
+
+            <section class="management-list">
+                <div class="product-manage-list" id="manager-list">
+                    <ul>
+                        <li>
+                            <div class="manage-item">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-FwSwbjHZfLHGUXglJKlqx6O4VDcXoP_ZfOrqWcAAqA&s" alt="Optimus Prime" class="item-image">
+                                <div class="metadata">
+                                    <div class="main-metadata">
+                                        <h1>Optimus Prime</h1>
+                                        <span class="id">ID: #12D45</span>
+                                    </div>
+
+                                    <div class="detailed-metadata">
+                                        <ul>
+                                            <li>
+                                                <p>Price: $25.00</p>
+                                            </li>
+                                            <li>
+                                                <p>Age: 12+</p>
+                                            </li>
+                                            <li>
+                                                <p>Theme: Robotic</p>
+                                            </li>
+                                            <li>
+                                                <p>Stock: 12</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="control-page">
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="remove-btn">Remove</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ToyBox. All rights reserved.</p>
+    </footer>
+
+    <div id="Modal" class="modal-overlay">
+        <div class="modal-box">
+
+            <header class="modal-header">
+                <h2>Product Form</h2>
+                <button class="close-modal-btn">&times;</button>
+            </header>
+
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="form-name" value="">
+                    <label>Product ID</label>
+                    <input type="text" id="form-id" value="">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price ($)</label>
+                        <input type="number" step="0.01" id="form-price" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Age Limit</label>
+                        <select id="form-age-limit" class="sort-options">
+                            <option selected>12+</option>
+                            <option>9+</option>
+                            <option>3+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" id="form-stock" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Theme</label>
+                        <select class="sort-options" id="theme-form">
+                            <option selected>Robotic</option>
+                            <option>City</option>
+                            <option>Space</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Image Source</label>
+                    <input type="text" id="img-src-form">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Product Description</label>
+                    <textarea rows="10" id="desc-form"
+                        placeholder="Enter detailed toy features, box contents, or materials used..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+    <script src="inventoryManager.js"></script>
+    <script src="toyManager.js"></script>
+</body>
+
+</html>
